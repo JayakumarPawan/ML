@@ -1,9 +1,3 @@
-''' thIS IS SINT AUTISTIC ANY MORE AYEEEEEEEE LETS GET THIS BREAAD'''
-
-
-
-
-
 import gym
 import numpy as np
 import pandas as pd
@@ -16,6 +10,9 @@ register(
     max_episode_steps=100,
     reward_threshold=0.8196, # optimum = .8196, changing this seems have no influence
 )
+'''
+Implementation of tabular Q - Learning in the frozen lake environment.
+'''
 env = gym.make("FrozenLakeNotSlippery-v0")
 
 #env = gym.make('FrozenLake-v0')
@@ -39,10 +36,8 @@ g = .95
 E = .5
 
 Q = np.zeros((s_size, a_size))     # Q initial values
-#make sure it doesnt try to go into walls
-
-
 count = 0
+
 for episode in range(episodes):
     s = env.reset()
     done = False
